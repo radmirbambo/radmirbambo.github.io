@@ -8,102 +8,171 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
-:root { --ink: #1A1A1A; --muted: #4A4A48; --cover: #FF5F1F; --live: #2B3FE0; --cond: "Fira Sans Extra Condensed", "Arial Narrow", sans-serif; }
-@page { size: A4; margin: 9mm 13mm; }
+:root { --ink: #1A1A1A; --muted: #4A4A48; --cover: #FF5F1F; --live: #2B3FE0; --cond: "Fira Sans Extra Condensed", "Arial Narrow", sans-serif; --serif: "PT Serif", Georgia, serif; }
+@page { size: A4; margin: 0; }
 * { box-sizing: border-box; }
-body { margin: 0; background: #fff; color: var(--ink); font: 400 8.9pt/1.36 "PT Serif", Georgia, serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.page { max-width: 184mm; margin: 0 auto; }
+html, body { margin: 0; }
+body { width: 210mm; background: #fff; color: var(--ink); font: 400 8.8pt/1.34 var(--serif); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 a { color: inherit; text-decoration: none; }
-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding: 9px 12px 8px; background: var(--cover); }
-h1 { margin: 0; white-space: nowrap; font: 800 27pt/.9 var(--cond); text-transform: uppercase; letter-spacing: -.01em; }
-.contacts { text-align: right; white-space: nowrap; font: 500 9.4pt/1.35 var(--cond); }
-.summary { margin: 8px 0 0; font-size: 9.6pt; line-height: 1.42; }
-h2 { margin: 11px 0 5px; padding-bottom: 1px; font: 800 13pt/1.1 var(--cond); border-bottom: 2.5px solid var(--ink); }
-.job { margin: 0 0 6px; }
-.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-.job h3 { margin: 0; font: 700 11pt/1.2 var(--cond); }
-.job h3 span { font-weight: 500; color: var(--muted); }
-.when { white-space: nowrap; font: 700 10pt/1.2 var(--cond); }
-ul { margin: 2px 0 0; padding-left: 12px; }
-li { margin: 0 0 1.5px; }
-li::marker { content: "– "; }
+
+/* cover */
+.cover { background: var(--cover); padding: 8mm 13mm 5.5mm; display: grid; grid-template-columns: 1fr 72mm; gap: 6mm; align-items: end; }
+h1 { margin: 0; white-space: nowrap; font: 800 29pt/.9 var(--cond); text-transform: uppercase; letter-spacing: -.01em; }
+.rule { border: 0; border-top: 3px solid var(--ink); margin: 2.6mm 0 2.4mm; }
+.lead { margin: 0 0 2.6mm; font-size: 10.2pt; line-height: 1.34; }
+.contacts { display: grid; grid-template-columns: auto auto; gap: .4mm 7mm; justify-content: start; font: 500 9.2pt/1.3 var(--cond); }
+.fig { display: block; width: 72mm; height: auto; }
+.fig text { fill: var(--ink); paint-order: stroke; stroke: var(--cover); stroke-width: 5px; stroke-linejoin: round; }
+.fig .lbl { font: 700 11.5px var(--cond); }
+.fig .sub { font: 500 11px var(--cond); }
+.fig .var { font: italic 700 17px var(--serif); }
+.fig .cap { font: 400 10.5px var(--serif); stroke-width: 0; }
+
+/* body */
+main { padding: 1mm 13mm 0; }
+h2 { margin: 3.4mm 0 1.8mm; padding-bottom: .6mm; font: 800 14pt/1 var(--cond); border-bottom: 2.5px solid var(--ink); }
+.row { display: grid; grid-template-columns: 21mm 1fr; gap: 0 4mm; margin: 0 0 2mm; }
+.rail .yr { display: block; font: 800 12.5pt/1 var(--cond); }
+.rail .role { display: block; margin-top: .6mm; font: 500 8.6pt/1.2 var(--cond); color: var(--muted); }
+h3 { margin: 0 0 .6mm; font: 700 11pt/1.2 var(--cond); }
+h3 .no { color: var(--live); font-weight: 500; }
+h3 span.at { font-weight: 500; color: var(--muted); }
+ul { margin: 0; padding: 0; list-style: none; }
+li { margin: 0 0 .7mm; padding-left: 3.2mm; position: relative; }
+li::before { content: ""; position: absolute; left: 0; top: .66em; width: 1.9mm; height: 1.4px; background: var(--ink); }
 li b { font-weight: 700; }
-.skills { display: grid; grid-template-columns: 30mm 1fr; gap: 3px 10px; }
-.skills dt { font: 700 10pt/1.3 var(--cond); }
+.past { border-top: 1px dashed var(--ink); padding-top: 1.6mm; }
+.skills { margin: 0; display: grid; grid-template-columns: 25mm 1fr; gap: 1mm 4mm; }
+.skills dt { font: 700 9.6pt/1.3 var(--cond); }
 .skills dd { margin: 0; }
 </style>
 </head>
 <body>
-<div class="page">
-  <header>
-    <div>
-      <h1>Радмир Шайхутдинов</h1>
-    </div>
+<header class="cover">
+  <div>
+    <h1>Радмир Шайхутдинов</h1>
+    <hr class="rule">
+    <p class="lead">Запускаю бизнесы на AI-агентах. Сейчас делаю голосового AI-администратора для стоматологий и развиваю Бизнес-клуб МФТИ, который основал. Хочу отвечать за запуск AI-продуктов и трансформацию процессов в большой компании.</p>
     <div class="contacts">
-      <a href="tel:+79957804401">+7 995 780-44-01</a> · <a href="https://t.me/radmirshaikh">t.me/radmirshaikh</a><br>
-      shaikhutdinov.ri@phystech.edu<br>
-      Radmir_Shaykhutdinov@bba.skolkovo.ru<br>
-      <a href="https://radmirbambo.github.io">radmirbambo.github.io</a> · <a href="https://github.com/radmirbambo">github.com/radmirbambo</a> · Москва
+      <a href="tel:+79957804401">+7 995 780-44-01</a>
+      <a href="https://t.me/radmirshaikh">t.me/radmirshaikh</a>
+      <span>shaikhutdinov.ri@phystech.edu</span>
+      <a href="https://radmirbambo.github.io">radmirbambo.github.io</a>
+      <span>Radmir_Shaykhutdinov@bba.skolkovo.ru</span>
+      <a href="https://github.com/radmirbambo">github.com/radmirbambo</a>
     </div>
-  </header>
+  </div>
+  <svg class="fig" viewBox="-12 0 304 190" role="img" aria-label="Рис. 1: я в центре; F1 — бизнесы на AI, F2 — Бизнес-клуб МФТИ; опора — МФТИ × Сколково с 2024, под ней ВШЭ с 2023">
+    <defs>
+      <clipPath id="face"><circle cx="140" cy="84" r="56"/></clipPath>
+      <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#1A1A1A" stroke-width="1" opacity=".6"/></pattern>
+      <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#1A1A1A" opacity=".55"/><circle cx="6" cy="6" r="1.1" fill="#1A1A1A" opacity=".55"/></pattern>
+    </defs>
+    <rect x="0" y="158" width="280" height="15" fill="url(#hatch)"/>
+    <rect x="0" y="173" width="280" height="15" fill="url(#dots)"/>
+    <line x1="0" y1="158" x2="280" y2="158" stroke="#1A1A1A" stroke-width="2.4"/>
+    <line x1="0" y1="173" x2="280" y2="173" stroke="#1A1A1A" stroke-width="1.2" stroke-dasharray="5 5"/>
+    <path d="M140 158 C 137 165, 126 169, 112 174 M140 158 C 143 165, 154 168, 168 172" stroke="#FF5F1F" stroke-width="7" fill="none"/>
+    <path d="M140 158 C 137 165, 126 169, 112 174 M140 158 C 143 165, 154 168, 168 172" stroke="#1A1A1A" stroke-width="2" fill="none"/>
+    <path d="M140 158 C 141 170, 136 180, 133 188" stroke="#1A1A1A" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+    <line x1="140" y1="158" x2="140" y2="152" stroke="#1A1A1A" stroke-width="2.4"/>
+    <polygon points="140,143 135,153 145,153" fill="#1A1A1A"/>
+    <text class="var" x="150" y="156">N</text>
+    <line x1="100" y1="44" x2="69" y2="15" stroke="#1A1A1A" stroke-width="3.4"/>
+    <polygon points="60,6 64,23 76,11" fill="#1A1A1A"/>
+    <text class="var" x="98" y="20">F₁</text>
 
-  <p class="summary">Запускаю бизнесы на AI-агентах. С 2026 года — CEO стартапа голосового AI для стоматологий — от исследования рынка до прототипа и продаж. С 2025 года — основатель Бизнес-клуба МФТИ, 35 фаундеров-резидентов. Каждый день пишу AI-агентов на Claude API и довожу их до работающего продукта. Хочу отвечать за запуск AI-продуктов и трансформацию процессов в большой компании.</p>
+    <line x1="180" y1="44" x2="205" y2="21" stroke="#1A1A1A" stroke-width="2.6"/>
+    <polygon points="213,13 200,17 208,26" fill="#1A1A1A"/>
+    <text class="var" x="182" y="20" text-anchor="end">F₂</text>
+
+    <circle cx="140" cy="84" r="61" fill="#FF5F1F"/>
+    <image href="img/radmir-cv.jpg" x="84" y="28" width="112" height="112" clip-path="url(#face)" preserveAspectRatio="xMidYMid slice"/>
+    <circle cx="140" cy="84" r="56" fill="none" stroke="#1A1A1A" stroke-width="2.6"/>
+    <text class="lbl" x="-12" y="100">бизнесы на AI</text>
+    <text class="sub" x="-12" y="114">Voice AI, агенты</text>
+    <text class="lbl" x="292" y="100" text-anchor="end">Бизнес-клуб МФТИ</text>
+    <text class="sub" x="292" y="114" text-anchor="end">35 фаундеров</text>
+    <text class="sub" x="280" y="169" text-anchor="end">МФТИ × Сколково</text>
+    <text class="sub" x="280" y="184" text-anchor="end">НИУ ВШЭ</text>
+    <text class="sub" x="0" y="169">с 2024</text>
+    <text class="sub" x="0" y="184">2023</text>
+  </svg>
+</header>
+
+<main>
+  <h2>Мои проекты</h2>
+
+  <div class="row">
+    <div class="rail"><span class="yr">с 2026</span><span class="role">Сооснователь и CEO</span></div>
+    <div>
+      <h3><span class="no">1.</span> Голосовой AI-администратор для стоматологий</h3>
+      <ul>
+        <li>AI-администратор берёт трубку, отвечает на вопросы пациента и записывает на приём. Отвечаю за продажи, маркетинг и команду, продукт делаем вместе с CTO.</li>
+        <li>Проверил 56 клиник Москвы методом тайного покупателя: на заявку с сайта перезвонили 20, за 5 минут — 10. Понял, что пациенты в основном звонят, и перестроил продукт под телефон.</li>
+        <li>Собрали прототип на Voximplant: принимает входящие и записывает на приём. Готовлю персональные предложения первым клиникам.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="rail"><span class="yr">с 2024</span><span class="role">Код на GitHub</span></div>
+    <div>
+      <h3><span class="no">2.</span> AI-агенты на Claude API</h3>
+      <ul>
+        <li><b>invite-bot</b> — ищет информацию о человеке в сети и пишет персональное приглашение в стиле основателя. Работает в клубе.</li>
+        <li><b>pitch-coach</b> — AI-копилот для питчей: RAG по реальным питчдекам, дообученные эмбеддинги поиска (Recall@1 +10,7% к базовым), режим скептичного инвестора.</li>
+        <li><b>Job Application Agent</b> — сверяет вакансию с профилем и пишет отклик под тип роли (agentic loop).</li>
+        <li><b>podkast-llm</b> — Telegram-бот рекомендаций подкастов: RAG по каталогу Яндекс Музыки, голосовой ввод.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="rail"><span class="yr">с 2025</span><span class="role">Основатель и президент</span></div>
+    <div>
+      <h3><span class="no">3.</span> Бизнес-клуб МФТИ</h3>
+      <ul>
+        <li>Собрал с нуля закрытое сообщество: 35 резидентов-фаундеров, средняя выручка ~40 млн ₽/год. Партнёр клуба — основатель компании с оборотом 200 млрд ₽/год.</li>
+        <li>Провёл 7 мероприятий, ~1500 человек очно. Вырастил Telegram-канал клуба с нуля до 2000 подписчиков.</li>
+        <li>Брал интервью на сцене: Михаил Кучмент (Hoff), Борис Глазков (Роскосмос), Виктор Кузнецов (ВсеИнструменты.ру). Запускаю Builders Club для senior-разработчиков и AI-инженеров.</li>
+      </ul>
+    </div>
+  </div>
 
   <h2>Опыт</h2>
-
-  <div class="job">
-    <div class="job-head"><h3>Сооснователь и CEO <span>— Voice AI для стоматологических клиник</span></h3><span class="when">2026 — н.в.</span></div>
-    <ul>
-      <li>Голосовой AI-администратор: берёт трубку, отвечает на вопросы пациента и записывает на приём. Отвечаю за продажи, маркетинг и команду, продукт делаем вместе с CTO.</li>
-      <li>Провёл исследование 56 клиник Москвы методом тайного покупателя: на заявку с сайта перезвонили 20, за 5 минут — 10. По итогам сменили гипотезу и перестроили продукт под телефонные звонки.</li>
-      <li>Собрали прототип на Voximplant, который принимает входящие и записывает на приём. Готовлю персональные предложения первым клиникам.</li>
-    </ul>
+  <div class="row">
+    <div class="rail"><span class="yr">2025</span><span class="role">2 месяца</span></div>
+    <div>
+      <h3>Бизнес-ассистент CEO <span class="at">— консалтинговая компания</span></h3>
+      <ul><li>Систематизировал операционные процессы, написал регламенты, выстроил отдел найма.</li></ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="rail"><span class="yr">2023–25</span><span class="role">НИУ ВШЭ</span></div>
+    <div>
+      <h3>Координатор мероприятий, глава PR-отдела</h3>
+      <ul><li>«Посвящение»: 350 участников, 100 организаторов под моим руководством, бюджет 1,7 млн ₽. «Детектив»: 250 участников, 80 организаторов. PR студорганизации: Telegram, VK, контент-стратегия.</li></ul>
+    </div>
   </div>
 
-  <div class="job">
-    <div class="job-head"><h3>AI-проекты <span>— личные и для клуба, код на GitHub</span></h3><span class="when">2024 — н.в.</span></div>
-    <ul>
-      <li><b>invite-bot</b> — агент ищет информацию о человеке в сети и пишет персональное приглашение в стиле основателя. Claude API, web search, Telegram Bot API, Railway. Работает в клубе.</li>
-      <li><b>pitch-coach</b> — AI-копилот для питчей стартапов: RAG по реальным питчдекам, дообученные эмбеддинги поиска (Recall@1 +10,7% к базовым), режим скептичного инвестора.</li>
-      <li><b>Job Application Agent</b> — парсит вакансию, сверяет с профилем и генерирует отклик под тип роли. Agentic loop с детектором типа роли.</li>
-      <li><b>podkast-llm</b> — Telegram-бот рекомендаций подкастов: RAG по каталогу Яндекс Музыки, голосовой ввод.</li>
-    </ul>
+  <h2>Учёба</h2>
+  <div class="row">
+    <div class="rail"><span class="yr">с 2024</span><span class="role">Бакалавриат</span></div>
+    <div>
+      <h3>МФТИ × Школа управления «Сколково» <span class="at">— бизнес-бакалавриат</span></h3>
+      <ul>
+        <li>Технический трек: матанализ, теормех, дифуры, теорвер, матстатистика, ML, анализ данных.</li>
+        <li>Трек Сколково: маркетинг, поведенческая экономика, лидерство, философия, психология; консалтинговый проект.</li>
+      </ul>
+    </div>
   </div>
-
-  <div class="job">
-    <div class="job-head"><h3>Основатель и президент <span>— Бизнес-клуб МФТИ</span></h3><span class="when">2025 — н.в.</span></div>
-    <ul>
-      <li>Собрал с нуля закрытое сообщество: 35 резидентов-фаундеров, средняя выручка ~40 млн ₽/год. Партнёр клуба — основатель компании с оборотом 200 млрд ₽/год.</li>
-      <li>7 мероприятий, ~1500 человек очно. Telegram-канал клуба вырос с нуля до 2000 подписчиков.</li>
-      <li>Интервью на сцене: Михаил Кучмент (Hoff), Борис Глазков (Роскосмос), Виктор Кузнецов (ВсеИнструменты.ру).</li>
-      <li>Запускаю Builders Club — закрытый трек для senior-разработчиков и AI-инженеров.</li>
-    </ul>
-  </div>
-
-  <div class="job">
-    <div class="job-head"><h3>Бизнес-ассистент CEO <span>— консалтинговая компания</span></h3><span class="when">2025 · 2 мес.</span></div>
-    <ul><li>Систематизировал операционные процессы, написал регламенты, выстроил отдел найма.</li></ul>
-  </div>
-
-  <div class="job">
-    <div class="job-head"><h3>Координатор мероприятий, глава PR-отдела <span>— НИУ ВШЭ</span></h3><span class="when">2023 — 2025</span></div>
-    <ul>
-      <li>«Посвящение»: 350 участников, 100 организаторов под моим руководством, бюджет 1,7 млн ₽. «Детектив»: 250 участников, 80 организаторов.</li>
-      <li>PR студорганизации: Telegram, VK, контент-стратегия.</li>
-    </ul>
-  </div>
-
-  <h2>Образование</h2>
-  <div class="job">
-    <div class="job-head"><h3>МФТИ × Школа управления «Сколково» <span>— бизнес-бакалавриат</span></h3><span class="when">2024 — н.в.</span></div>
-    <ul>
-      <li>Технический трек: матанализ, теормех, дифуры, теорвер, матстатистика, ML, анализ данных.</li>
-      <li>Трек Сколково: маркетинг, поведенческая экономика, лидерство, философия, социология, психология. Консалтинговый проект с выездом в Нижний Новгород.</li>
-    </ul>
-  </div>
-  <div class="job">
-    <div class="job-head"><h3>НИУ ВШЭ <span>— инженерная программа, после 2 курса перешёл в МФТИ × Сколково</span></h3><span class="when">2023 — 2025</span></div>
-    <ul><li>Математика, программирование, первые проекты с LLM: RAG, fine-tuning.</li></ul>
+  <div class="row past">
+    <div class="rail"><span class="yr">2023–25</span><span class="role">До перевода</span></div>
+    <div>
+      <h3>НИУ ВШЭ <span class="at">— инженерная программа, после 2 курса перешёл в МФТИ × Сколково</span></h3>
+      <ul><li>Математика, программирование, первые проекты с LLM: RAG, fine-tuning.</li></ul>
+    </div>
   </div>
 
   <h2>Навыки</h2>
@@ -112,6 +181,6 @@ li b { font-weight: 700; }
     <dt>Бизнес и люди</dt><dd>Продажи и переговоры с C-level, исследования клиентов, партнёрства, сообщества. Регламенты, процессы, найм, управление командой 100+ человек.</dd>
     <dt>Языки</dt><dd>Русский — родной, английский — B2.</dd>
   </dl>
-</div>
+</main>
 </body>
 </html>
