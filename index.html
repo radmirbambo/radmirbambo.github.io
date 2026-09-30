@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Радмир Шайхутдинов</title>
-<meta name="description" content="Основатель Бизнес-клуба МФТИ, CEO стартапа голосового AI для стоматологий. Пишу AI-агентов на Claude API.">
+<meta name="description" content="Запускаю бизнесы на AI-агентах: CEO стартапа голосового AI для стоматологий, основатель Бизнес-клуба МФТИ.">
 <meta property="og:title" content="Радмир Шайхутдинов">
-<meta property="og:description" content="Строю Бизнес-клуб МФТИ и пишу AI-агентов. Сейчас — голосовой AI-администратор для стоматологий.">
+<meta property="og:description" content="Запускаю бизнесы на AI-агентах. Сейчас — голосовой AI-администратор для стоматологий. Основал Бизнес-клуб МФТИ.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://radmirbambo.github.io/">
 <meta property="og:image" content="https://radmirbambo.github.io/og.png">
@@ -92,6 +92,18 @@ h1 {
 .graph text { fill: var(--ink); font: 500 13px "Onest", sans-serif; paint-order: stroke; stroke: var(--bg); stroke-width: 6px; stroke-linejoin: round; }
 .graph .side { fill: var(--muted); font-size: 12px; font-weight: 400; }
 .graph .core text { font-weight: 700; font-size: 14px; }
+.graph .hub text { font-weight: 700; font-size: 14px; }
+.graph .hub circle { fill: var(--ink); stroke: var(--ink); }
+.graph .hub.hot circle { fill: var(--accent); stroke: var(--accent); }
+.graph .lead-node circle { fill: var(--accent); stroke: var(--accent); }
+.graph .edge.root { stroke: var(--ink); stroke-width: 1.5; }
+.graph .edge.past { stroke: var(--muted); stroke-dasharray: 4 5; }
+.graph .band { stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 5; }
+.graph .year { fill: var(--muted); font-size: 12px; font-weight: 500; }
+.graph .sub { fill: var(--muted); font-size: 12px; font-weight: 400; }
+.graph .root-node text.name { font-weight: 700; font-size: 14px; }
+.graph .root-node.past circle { fill: var(--bg); stroke: var(--muted); stroke-dasharray: 3 3; }
+.graph .me-ring { fill: none; stroke: var(--accent); stroke-width: 3; }
 .graph a circle { transition: r .15s ease, fill .15s ease; }
 .graph a:hover circle, .graph a:focus-visible circle { fill: var(--accent-soft); stroke: var(--accent); }
 .graph .core a:hover circle { fill: var(--accent); }
@@ -100,6 +112,7 @@ h1 {
 @media (prefers-reduced-motion: no-preference) {
   .graph .edge { stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 1.1s ease-out .15s forwards; }
   .graph .edge.hot { animation-delay: .55s; }
+  .graph .edge.past { animation: none; stroke-dasharray: 4 5; stroke-dashoffset: 0; }
   @keyframes draw { to { stroke-dashoffset: 0; } }
 }
 
@@ -125,6 +138,10 @@ h2 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.01em; }
 .project p { margin: 0; font-size: 16px; color: var(--muted); }
 .project p + p { margin-top: 8px; color: var(--ink); font-size: 15px; }
 
+.photo { margin: 18px 0 0; }
+.photo img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.photo figcaption { margin-top: 8px; color: var(--muted); font-size: 15px; }
+
 .about p {
   margin: 0 0 14px;
   max-width: 62ch;
@@ -144,7 +161,8 @@ footer { padding: 40px 0 56px; border-top: 1.5px solid var(--line); color: var(-
 @media (max-width: 560px) {
   .graph text { font-size: 17px; }
   .graph .core text { font-size: 18px; }
-  .graph .side { font-size: 15px; }
+  .graph .side, .graph .sub, .graph .year { font-size: 15px; }
+  .graph .hub text, .graph .root-node text.name { font-size: 18px; }
 }
 </style>
 </head>
@@ -154,7 +172,7 @@ footer { padding: 40px 0 56px; border-top: 1.5px solid var(--line); color: var(-
   <header class="hero">
     <div>
       <h1>Радмир<br>Шайхутдинов</h1>
-      <p class="lead">Строю Бизнес-клуб МФТИ и пишу <span class="nw">AI-агентов</span>. Сейчас делаю голосового <span class="nw">AI-администратора</span> для стоматологий.</p>
+      <p class="lead">Запускаю бизнесы на <span class="nw">AI-агентах</span>. Сейчас делаю голосового <span class="nw">AI-администратора</span> для стоматологий. Основал Бизнес-клуб МФТИ.</p>
       <ul class="links">
         <li><a class="cv" href="cv.pdf">Резюме, PDF</a></li>
         <li><a href="https://t.me/radmirshaikh">Telegram</a></li>
@@ -163,44 +181,51 @@ footer { padding: 40px 0 56px; border-top: 1.5px solid var(--line); color: var(-
       </ul>
     </div>
 
-    <svg class="graph" viewBox="0 0 520 440" role="img" aria-labelledby="gt">
-      <title id="gt">Схема: бизнес-проекты слева и технические справа сходятся на стартапе Voice AI для стоматологий</title>
-      <text class="side" x="20" y="22">люди и бизнес</text>
-      <text class="side" x="500" y="22" text-anchor="end">технологии</text>
+    <svg class="graph" viewBox="0 0 520 490" role="img" aria-labelledby="gt">
+      <title id="gt">Дерево: в центре Радмир. Ветви — бизнесы на AI-агентах и Бизнес-клуб МФТИ. Корни — бизнес-бакалавриат МФТИ × Сколково с 2024 года, а до него инженерная программа НИУ ВШЭ с 2023 года.</title>
+      <defs><clipPath id="face"><circle cx="260" cy="250" r="46"/></clipPath></defs>
+      <text class="side" x="20" y="16">бизнесы</text>
+      <text class="side" x="500" y="16" text-anchor="end">сообщество</text>
+      <line class="band" x1="20" y1="330" x2="500" y2="330"/>
+      <text class="side" x="20" y="322">фундамент</text>
 
       <!-- edges -->
-      <path class="edge" d="M110 80 L260 70"/>
-      <path class="edge" d="M410 80 L260 70"/>
-      <path class="edge" d="M110 80 L90 180"/>
-      <path class="edge" d="M90 180 L110 280"/>
-      <path class="edge" d="M410 80 L430 180"/>
-      <path class="edge" d="M430 180 L410 280"/>
-      <path class="edge" d="M110 380 L260 380"/>
-      <path class="edge" d="M410 380 L260 380"/>
-      <path class="edge" d="M110 380 L110 280"/>
-      <path class="edge" d="M410 380 L410 280"/>
-      <path class="edge hot" d="M110 80 L260 215"/>
-      <path class="edge hot" d="M90 180 L260 215"/>
-      <path class="edge hot" d="M410 80 L260 215"/>
-      <path class="edge hot" d="M430 180 L260 215"/>
-      <path class="edge hot" d="M260 380 L260 215"/>
+      <path class="edge hot" d="M260 250 L145 170"/>
+      <path class="edge hot" d="M145 170 L90 85"/>
+      <path class="edge hot" d="M145 170 L215 80"/>
+      <path class="edge hot" d="M145 170 L75 250"/>
+      <path class="edge" d="M260 250 L375 170"/>
+      <path class="edge" d="M375 170 L320 80"/>
+      <path class="edge" d="M375 170 L440 90"/>
+      <path class="edge" d="M375 170 L450 250"/>
+      <path class="edge root" d="M260 250 L260 380"/>
+      <path class="edge past" d="M260 380 L260 450"/>
 
-      <!-- business -->
-      <g><a href="#club"><circle cx="110" cy="80" r="9"/><text x="110" y="108" text-anchor="middle">Бизнес-клуб МФТИ</text></a></g>
-      <g><a href="#club"><circle cx="90" cy="180" r="7"/><text x="90" y="206" text-anchor="middle">24 фаундера</text></a></g>
-      <g><a href="#club"><circle cx="110" cy="280" r="7"/><text x="110" y="306" text-anchor="middle">1500 гостей</text></a></g>
-      <g><a href="#before"><circle cx="110" cy="380" r="7"/><text x="110" y="406" text-anchor="middle">команды 100+</text></a></g>
+      <!-- business + agents -->
+      <g class="hub hot"><a href="#voice"><circle cx="145" cy="170" r="9"/><text x="145" y="197" text-anchor="middle">Бизнесы на AI</text></a></g>
+      <g class="lead-node"><a href="#voice"><circle cx="90" cy="85" r="8"/><text x="90" y="52" text-anchor="middle">Voice AI</text><text class="sub" x="90" y="68" text-anchor="middle">для стоматологий</text></a></g>
+      <g><a href="#projects"><circle cx="215" cy="80" r="7"/><text x="215" y="47" text-anchor="middle">AI-агенты</text><text class="sub" x="215" y="63" text-anchor="middle">в проде</text></a></g>
+      <g><a href="#projects"><circle cx="75" cy="250" r="7"/><text x="75" y="276" text-anchor="middle">Claude API, RAG</text></a></g>
 
-      <!-- tech -->
-      <g><a href="#projects"><circle cx="410" cy="80" r="9"/><text x="410" y="108" text-anchor="middle">Claude API</text></a></g>
-      <g><a href="#projects"><circle cx="430" cy="180" r="7"/><text x="430" y="206" text-anchor="middle">агенты в проде</text></a></g>
-      <g><a href="#projects"><circle cx="410" cy="280" r="7"/><text x="410" y="306" text-anchor="middle">RAG, дообучение</text></a></g>
-      <g><a href="#study"><circle cx="410" cy="380" r="7"/><text x="410" y="406" text-anchor="middle">матан, ML</text></a></g>
+      <!-- club -->
+      <g class="hub"><a href="#club"><circle cx="375" cy="170" r="9"/><text x="375" y="197" text-anchor="middle">Бизнес-клуб МФТИ</text></a></g>
+      <g><a href="#club"><circle cx="320" cy="80" r="7"/><text x="320" y="63" text-anchor="middle">Builders Club</text></a></g>
+      <g><a href="#club"><circle cx="440" cy="90" r="7"/><text x="440" y="57" text-anchor="middle">35</text><text class="sub" x="440" y="73" text-anchor="middle">фаундеров</text></a></g>
+      <g><a href="#club"><circle cx="450" cy="250" r="7"/><text x="450" y="276" text-anchor="middle">1500 гостей</text></a></g>
 
-      <!-- bridges -->
-      <g><a href="#club"><circle cx="260" cy="70" r="7"/><text x="260" y="48" text-anchor="middle">Builders Club</text></a></g>
-      <g><a href="#study"><circle cx="260" cy="380" r="7"/><text x="260" y="424" text-anchor="middle">МФТИ × Сколково</text></a></g>
-      <g class="core"><a href="#voice"><circle cx="260" cy="215" r="14"/><text x="260" y="252" text-anchor="middle">Voice AI для стоматологий</text></a></g>
+      <!-- roots -->
+      <g class="root-node"><a href="#study"><circle cx="260" cy="380" r="9"/>
+        <text class="year" x="240" y="384" text-anchor="end">с 2024</text>
+        <text class="name" x="280" y="378">МФТИ × Сколково</text>
+        <text class="sub" x="280" y="396">бизнес-бакалавриат</text></a></g>
+      <g class="root-node past"><a href="#study"><circle cx="260" cy="450" r="7"/>
+        <text class="year" x="240" y="454" text-anchor="end">2023</text>
+        <text class="name" x="280" y="448">НИУ ВШЭ</text>
+        <text class="sub" x="280" y="466">инженерная программа</text></a></g>
+
+      <!-- me -->
+      <image href="img/radmir.jpg" x="214" y="204" width="92" height="92" clip-path="url(#face)" preserveAspectRatio="xMidYMid slice"/>
+      <circle class="me-ring" cx="260" cy="250" r="46"/>
     </svg>
   </header>
 
@@ -218,24 +243,13 @@ footer { padding: 40px 0 56px; border-top: 1.5px solid var(--line); color: var(-
             <li>Веду продажи: персональные предложения для первых клиник, от сетей до частных практик.</li>
           </ul>
         </article>
-        <article class="item" id="club">
-          <h3>Бизнес-клуб МФТИ</h3>
-          <p class="when">Основатель и президент, с 2025</p>
-          <p>Закрытое сообщество фаундеров Физтеха, которое я собрал с нуля.</p>
-          <ul>
-            <li>24 резидента-фаундера, средняя выручка их компаний около 40 млн ₽ в год. Партнёр клуба — основатель компании с оборотом 200 млрд ₽.</li>
-            <li>7 открытых мероприятий, около 1500 человек очно. Telegram-канал клуба вырос с нуля до 2000 подписчиков.</li>
-            <li>Интервью на сцене: Михаил Кучмент (Hoff), Борис Глазков (Роскосмос), Виктор Кузнецов (ВсеИнструменты.ру).</li>
-            <li>Запускаем Builders Club — закрытый трек для senior-разработчиков и AI-инженеров.</li>
-          </ul>
-        </article>
       </div>
     </div>
   </section>
 
   <section id="projects">
     <div class="sec">
-      <h2>AI-проекты</h2>
+      <h2>AI-агенты</h2>
       <div class="items projects">
         <article class="project">
           <h3><a href="https://github.com/radmirbambo/invite-bot">invite-bot</a></h3>
@@ -256,6 +270,29 @@ footer { padding: 40px 0 56px; border-top: 1.5px solid var(--line); color: var(-
           <h3>Job Application Agent</h3>
           <p>Читает вакансию, сверяет с профилем навыков и пишет отклик под тип роли.</p>
           <p>Agentic loop с детектором типа роли. Пользуюсь им для реальных откликов.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="sec">
+      <h2>Сообщество</h2>
+      <div class="items">
+        <article class="item" id="club">
+          <h3>Бизнес-клуб МФТИ</h3>
+          <p class="when">Основатель и президент, с 2025</p>
+          <p>Закрытое сообщество фаундеров Физтеха, которое я собрал с нуля.</p>
+          <ul>
+            <li>35 резидентов-фаундеров, средняя выручка их компаний около 40 млн ₽ в год. Партнёр клуба — основатель компании с оборотом 200 млрд ₽.</li>
+            <li>7 открытых мероприятий, около 1500 человек очно. Telegram-канал клуба вырос с нуля до 2000 подписчиков.</li>
+            <li>Интервью на сцене: Михаил Кучмент (Hoff), Борис Глазков (Роскосмос), Виктор Кузнецов (ВсеИнструменты.ру).</li>
+            <li>Запускаем Builders Club — закрытый трек для senior-разработчиков и AI-инженеров.</li>
+          </ul>
+          <figure class="photo">
+            <img src="img/kuchment.jpg" width="800" height="477" loading="lazy" alt="Полный зал на встрече Бизнес-клуба МФТИ с Михаилом Кучментом, основателем Hoff">
+            <figcaption>Встреча с Михаилом Кучментом (Hoff), июнь 2026</figcaption>
+          </figure>
         </article>
       </div>
     </div>
@@ -294,8 +331,8 @@ footer { padding: 40px 0 56px; border-top: 1.5px solid var(--line); color: var(-
         </article>
         <article class="item">
           <h3>НИУ ВШЭ</h3>
-          <p class="when">2023–2025</p>
-          <p>Курс по LLM: RAG, дообучение, архитектура трансформеров. Ушёл после второго курса, чтобы учиться там, где готовят предпринимателей.</p>
+          <p class="when">Инженерная программа, 2023–2025</p>
+          <p>Математика, программирование, первые проекты с LLM и RAG. После второго курса перешёл на бизнес-бакалавриат МФТИ × Сколково, чтобы учиться там, где готовят предпринимателей.</p>
         </article>
       </div>
     </div>
