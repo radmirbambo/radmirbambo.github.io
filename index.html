@@ -20,22 +20,22 @@
 :root {
   --cover: #FF5F1F;
   --cover-ink: #1A1A1A;
+  --cover-hi: #FFFFFF;
   --paper: #F6F6F3;
   --ink: #1A1A1A;
   --ink-2: #4A4A48;
   --rule: #1A1A1A;
   --live: #2B3FE0;
-  --shade: #E9E9E4;
   --cond: "Fira Sans Extra Condensed", "Arial Narrow", sans-serif;
   --serif: "PT Serif", Georgia, serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #161617; --ink: #ECECE6; --ink-2: #B4B4AE; --rule: #ECECE6; --live: #9AA6FF; --shade: #242426;
+    --paper: #161617; --ink: #ECECE6; --ink-2: #B4B4AE; --rule: #ECECE6; --live: #9AA6FF;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #161617; --ink: #ECECE6; --ink-2: #B4B4AE; --rule: #ECECE6; --live: #9AA6FF; --shade: #242426;
+  --paper: #161617; --ink: #ECECE6; --ink-2: #B4B4AE; --rule: #ECECE6; --live: #9AA6FF;
 }
 
 * { box-sizing: border-box; }
@@ -110,8 +110,8 @@ figure { margin: 0; }
 .fig .vec { color: var(--cover-ink); cursor: pointer; }
 .fig .vec .shaft { stroke: currentColor; stroke-linecap: butt; }
 .fig .vec .head { fill: currentColor; }
-.fig .vec:hover, .fig .vec:focus-visible { color: #fff; outline: none; }
-.fig .vec:hover text, .fig .vec:focus-visible text { fill: #fff; stroke: var(--cover-ink); }
+.fig .vec:hover, .fig .vec:focus-visible { color: var(--cover-hi); outline: none; }
+.fig .vec:hover text, .fig .vec:focus-visible text { fill: var(--cover-hi); stroke: var(--cover-ink); }
 .fig .stratum-link:hover text, .fig .stratum-link:focus-visible text { text-decoration: underline; }
 .fig .stratum-link:focus-visible { outline: none; }
 .fig .body-halo { fill: var(--cover); }
@@ -240,7 +240,7 @@ figure { margin: 0; }
       </div>
       <figure class="fig-wrap">
         <svg class="fig" viewBox="0 0 560 520" role="img" aria-labelledby="fig1t">
-<title id="fig1t">Рисунок 1: Радмир как тело, к которому приложены силы. F1, самая длинная, — бизнесы на AI: Voice AI для стоматологий, AI-агенты, Claude API. F2 — Бизнес-клуб МФТИ: 35 фаундеров, Builders Club, 1500 гостей. Снизу опора: бизнес-бакалавриат МФТИ × Сколково с 2024 года, под ним инженерная программа НИУ ВШЭ 2023–2025.</title>
+<title id="fig1t">Рисунок 1: я — тело, к которому приложены силы. F1, самая длинная, — бизнесы на AI: Voice AI для стоматологий, AI-агенты, Claude API. F2 — Бизнес-клуб МФТИ: 35 фаундеров, Builders Club, 1500 гостей. Снизу опора: бизнес-бакалавриат МФТИ × Сколково с 2024 года, под ним инженерная программа НИУ ВШЭ 2023–2025.</title>
 <defs>
   <clipPath id="face"><circle cx="280" cy="300" r="66"/></clipPath>
   <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" class="hatch-line"/></pattern>
@@ -272,7 +272,7 @@ figure { margin: 0; }
   <circle class="body-ring" cx="280" cy="300" r="66"/>
 </g>
 </svg>
-        <figcaption><b>Рис. 1.</b> Силы, приложенные к Радмиру. <i>F</i>₁ — бизнесы на AI-агентах, <i>F</i>₂ — Бизнес-клуб МФТИ, |<i>F</i>₁| &gt; |<i>F</i>₂|. <i>N</i> — реакция опоры: бизнес-бакалавриат МФТИ × Сколково, под ним слой ВШЭ.</figcaption>
+        <figcaption><b>Рис. 1.</b> Силы, которые двигают меня. <i>F</i>₁ — мои бизнесы на AI-агентах, <i>F</i>₂ — Бизнес-клуб МФТИ, который я основал, |<i>F</i>₁| &gt; |<i>F</i>₂|. <i>N</i> — реакция опоры: моя учёба, бизнес-бакалавриат МФТИ × Сколково, а под ним ВШЭ.</figcaption>
       </figure>
     </div>
   </div>
@@ -281,20 +281,20 @@ figure { margin: 0; }
 <main>
   <section class="rubric" id="tasks" aria-labelledby="tasks-h">
     <div class="wrap">
-      <div class="rubric-head"><h2 id="tasks-h">Задачник</h2><p>проекты и бизнесы, по степени важности</p></div>
+      <div class="rubric-head"><h2 id="tasks-h">Мои проекты</h2><p>что я строю сейчас, от главного к второстепенному</p></div>
 
       <article class="problem" id="voice">
         <div class="margin"><span class="yr num">с 2026</span><span class="role">Сооснователь и CEO</span></div>
         <div>
-          <h3><span class="no">Задача 1.</span> Голосовой AI-администратор для стоматологий</h3>
+          <h3><span class="no">1.</span> Голосовой AI-администратор для стоматологий</h3>
           <div class="cols">
             <div>
-              <p><span class="runin">Условие.</span> Пациент оставляет заявку на сайте клиники и ждёт звонка. Мы проверили <span class="num">56</span> клиник Москвы как тайные покупатели: перезвонили <span class="num">20</span>, за <span class="num">5</span> минут — только <span class="num">10</span>.</p>
+              <p><span class="runin">Проблема.</span> Пациент оставляет заявку на сайте клиники и ждёт звонка. Я проверил <span class="num">56</span> клиник Москвы как тайные покупатели: перезвонили <span class="num">20</span>, за <span class="num">5</span> минут — только <span class="num">10</span>.</p>
             </div>
             <div>
-              <p><span class="runin">Решение.</span> Поняли, что пациенты в основном звонят, и перестроили продукт под телефон. Вместе с CTO делаем AI-администратора: он берёт трубку, отвечает на вопросы и записывает на приём.</p>
+              <p><span class="runin">Что я сделал.</span> Понял, что пациенты в основном звонят, и перестроил продукт под телефон. Вместе с CTO делаю AI-администратора: он берёт трубку, отвечает на вопросы и записывает на приём.</p>
               <ul class="dash">
-                <li>Собрали прототип на Voximplant: принимает входящий звонок и записывает на приём.</li>
+                <li>Собрали с CTO прототип на Voximplant: принимает входящий звонок и записывает на приём.</li>
                 <li>Веду продажи: персональные предложения первым клиникам, от сетей до частных практик.</li>
               </ul>
             </div>
@@ -305,18 +305,18 @@ figure { margin: 0; }
       <article class="problem" id="agents">
         <div class="margin"><span class="yr num">с 2024</span><span class="role">AI-агенты, код на GitHub</span></div>
         <div>
-          <h3><span class="no">Задача 2.</span> Агенты, которые работают каждый день</h3>
+          <h3><span class="no">2.</span> AI-агенты, которые я написал</h3>
           <div class="cols">
             <div>
-              <p><span class="runin">Условие.</span> Найти задачи, на которые у людей уходят часы, и отдать их агенту на Claude API — так, чтобы им пользовались по-настоящему.</p>
+              <p><span class="runin">Проблема.</span> На рутину уходят часы: найти информацию о человеке, написать отклик, разобрать питч. Эту работу можно отдать агенту на Claude API.</p>
             </div>
             <div>
-              <p><span class="runin">Решение.</span></p>
+              <p><span class="runin">Что я сделал.</span> Написал агентов, которыми пользуются по-настоящему:</p>
               <ol class="parts">
                 <li><i>а)</i> <a href="https://github.com/radmirbambo/invite-bot">invite-bot</a> — ищет информацию о человеке в сети и пишет ему персональное приглашение голосом основателя. Работает в Бизнес-клубе МФТИ.</li>
                 <li><i>б)</i> <a href="https://github.com/radmirbambo/pitch-coach">pitch-coach</a> — разбирает питч, переписывает историю и играет скептичного инвестора. RAG по реальным питчдекам, дообученные эмбеддинги: Recall@1 на <span class="num">10,7</span>% выше базовых.</li>
                 <li><i>в)</i> <a href="https://github.com/radmirbambo/podkast-llm">podkast-llm</a> — Telegram-бот, советует подкасты по каталогу Яндекс Музыки, понимает голосовые.</li>
-                <li><i>г)</i> Job Application Agent — читает вакансию, сверяет с профилем навыков и пишет отклик под тип роли. Пользуюсь им сам.</li>
+                <li><i>г)</i> Job Application Agent — читает вакансию, сверяет с профилем навыков и пишет отклик под тип роли. Пользуюсь им сам для реальных откликов.</li>
               </ol>
             </div>
           </div>
@@ -326,17 +326,17 @@ figure { margin: 0; }
       <article class="problem" id="club">
         <div class="margin"><span class="yr num">с 2025</span><span class="role">Основатель и президент</span></div>
         <div>
-          <h3><span class="no">Задача 3.</span> Собрать фаундеров Физтеха в одном клубе</h3>
+          <h3><span class="no">3.</span> Бизнес-клуб МФТИ</h3>
           <div class="cols">
             <div>
-              <p><span class="runin">Условие.</span> Сделать с нуля закрытое сообщество, в которое хотят попасть действующие предприниматели, и открытые встречи, на которые приходит весь Физтех.</p>
+              <p><span class="runin">Проблема.</span> Фаундерам Физтеха нужно место, где можно встречаться друг с другом и с сильными предпринимателями.</p>
             </div>
             <div>
-              <p><span class="runin">Решение.</span> Бизнес-клуб МФТИ.</p>
+              <p><span class="runin">Что я сделал.</span> Основал Бизнес-клуб МФТИ с нуля:</p>
               <ul class="dash">
-                <li><span class="num">35</span> резидентов-фаундеров, средняя выручка их компаний около <span class="num">40</span> млн ₽ в год. Партнёр клуба — основатель компании с оборотом <span class="num">200</span> млрд ₽.</li>
-                <li><span class="num">7</span> открытых мероприятий, около <span class="num">1500</span> человек очно. Telegram-канал клуба вырос с нуля до <span class="num">2000</span> подписчиков.</li>
-                <li>Интервью на сцене: Михаил Кучмент (Hoff), Борис Глазков (Роскосмос), Виктор Кузнецов (ВсеИнструменты.ру).</li>
+                <li>Собрал <span class="num">35</span> резидентов-фаундеров, средняя выручка их компаний около <span class="num">40</span> млн ₽ в год. Партнёр клуба — основатель компании с оборотом <span class="num">200</span> млрд ₽.</li>
+                <li>Провёл <span class="num">7</span> открытых мероприятий, около <span class="num">1500</span> человек очно. Вырастил Telegram-канал клуба с нуля до <span class="num">2000</span> подписчиков.</li>
+                <li>Брал интервью на сцене: Михаил Кучмент (Hoff), Борис Глазков (Роскосмос), Виктор Кузнецов (ВсеИнструменты.ру).</li>
                 <li>Запускаем Builders Club — закрытый трек для senior-разработчиков и AI-инженеров.</li>
               </ul>
             </div>
@@ -352,7 +352,7 @@ figure { margin: 0; }
 
   <section class="rubric past" id="archive" aria-labelledby="archive-h">
     <div class="wrap">
-      <div class="rubric-head"><h2 id="archive-h">Из архива</h2><p>опыт до своих проектов</p></div>
+      <div class="rubric-head"><h2 id="archive-h">Опыт</h2><p>где я работал до своих проектов</p></div>
       <div class="archive">
         <article>
           <h3>Бизнес-ассистент CEO</h3>
@@ -362,7 +362,7 @@ figure { margin: 0; }
         <article>
           <h3>Мероприятия и PR в ВШЭ</h3>
           <p class="when">2023–2025</p>
-          <p>«Посвящение»: <span class="num">350</span> участников, <span class="num">100</span> организаторов под моим руководством, бюджет <span class="num">1,7</span> млн ₽. «Детектив»: <span class="num">250</span> участников, <span class="num">80</span> организаторов. Возглавлял PR-отдел студорганизации.</p>
+          <p>Организовал «Посвящение»: <span class="num">350</span> участников, <span class="num">100</span> организаторов под моим руководством, бюджет <span class="num">1,7</span> млн ₽. «Детектив»: <span class="num">250</span> участников, <span class="num">80</span> организаторов. Возглавлял PR-отдел студорганизации.</p>
         </article>
       </div>
     </div>
@@ -370,14 +370,14 @@ figure { margin: 0; }
 
   <section class="rubric" id="study" aria-labelledby="study-h">
     <div class="wrap">
-      <div class="rubric-head"><h2 id="study-h">Опора</h2><p>учёба, на которой всё стоит</p></div>
+      <div class="rubric-head"><h2 id="study-h">Учёба</h2><p>на чём всё держится</p></div>
       <div class="strata">
         <div class="stratum-row">
           <div class="band" aria-hidden="true"></div>
           <div>
             <h3>МФТИ × Школа управления «Сколково»</h3>
             <p class="when">Бизнес-бакалавриат, с 2024</p>
-            <p>Технический трек: матанализ, дифуры, теорвер, матстатистика, ML, анализ данных. Трек Сколково: маркетинг, поведенческая экономика, лидерство, философия, социология.</p>
+            <p>Учусь на двух треках. Технический: матанализ, дифуры, теорвер, матстатистика, ML, анализ данных. В Сколково: маркетинг, поведенческая экономика, лидерство, философия, социология.</p>
           </div>
         </div>
         <div class="stratum-row past">
@@ -385,7 +385,7 @@ figure { margin: 0; }
           <div>
             <h3>НИУ ВШЭ</h3>
             <p class="when">Инженерная программа, 2023–2025</p>
-            <p>Математика, программирование, первые проекты с LLM и RAG. После второго курса перешёл на бизнес-бакалавриат МФТИ × Сколково, чтобы учиться там, где готовят предпринимателей.</p>
+            <p>Изучал математику и программирование, сделал первые проекты с LLM и RAG. После второго курса перешёл на бизнес-бакалавриат МФТИ × Сколково, чтобы учиться там, где готовят предпринимателей.</p>
           </div>
         </div>
       </div>
@@ -394,7 +394,7 @@ figure { margin: 0; }
 
   <section class="editor" aria-labelledby="editor-h">
     <div class="wrap inner">
-      <h2 id="editor-h">От автора</h2>
+      <h2 id="editor-h">Обо мне</h2>
       <div>
         <p>Говорю на языке и бизнеса, и инженеров. Лучше всего работаю там, где нужно разобраться в задаче, собрать вокруг неё правильных людей и превратить её в работающий продукт.</p>
         <p>Каждый день пишу код с Claude Code. Веду свой Telegram-канал о предпринимательстве, в нём <span class="num">1700+</span> подписчиков.</p>
@@ -406,11 +406,11 @@ figure { margin: 0; }
 
 <footer class="answers" id="answers" aria-labelledby="answers-h">
   <div class="wrap">
-    <h2 id="answers-h">Ответы</h2>
+    <h2 id="answers-h">Контакты</h2>
     <div class="ans">
       <span aria-hidden="true"></span>
       <div>
-        <p class="ans-text"><i>Ответ:</i> написать мне в Telegram.</p>
+        <p class="ans-text">Быстрее всего со мной связаться в Telegram.</p>
         <p class="actions">
           <a class="btn solid" href="https://t.me/radmirshaikh">@radmirshaikh</a>
           <a class="btn line" href="cv.pdf" download="Радмир Шайхутдинов — резюме.pdf">Скачать резюме, PDF</a>
