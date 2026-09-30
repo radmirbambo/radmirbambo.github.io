@@ -6,29 +6,30 @@
 <title>Радмир Шайхутдинов — резюме</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
-:root { --ink: #16213D; --muted: #5F6980; --line: #C6CCD8; --accent: #2F4BFF; }
-@page { size: A4; margin: 9mm 14mm; }
+:root { --ink: #1A1A1A; --muted: #4A4A48; --cover: #FF5F1F; --live: #2B3FE0; --cond: "Fira Sans Extra Condensed", "Arial Narrow", sans-serif; }
+@page { size: A4; margin: 9mm 13mm; }
 * { box-sizing: border-box; }
-body { margin: 0; background: #fff; color: var(--ink); font: 400 9.4pt/1.4 "Onest", system-ui, sans-serif; }
-.page { max-width: 180mm; margin: 0 auto; }
+body { margin: 0; background: #fff; color: var(--ink); font: 400 8.9pt/1.36 "PT Serif", Georgia, serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { max-width: 184mm; margin: 0 auto; }
 a { color: inherit; text-decoration: none; }
-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding-bottom: 8px; border-bottom: 1.5px solid var(--ink); }
-h1 { margin: 0; white-space: nowrap; font-size: 23pt; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
-.contacts { text-align: right; font-size: 9pt; color: var(--muted); line-height: 1.5; }
-.summary { margin: 9px 0 0; font-size: 10pt; line-height: 1.45; }
-h2 { margin: 13px 0 5px; font-size: 11pt; font-weight: 700; color: var(--accent); }
-.job { margin: 0 0 7px; }
-.job-head { display: flex; justify-content: space-between; gap: 12px; }
-.job h3 { margin: 0; font-size: 10.2pt; font-weight: 700; }
-.job h3 span { font-weight: 400; color: var(--muted); }
-.when { white-space: nowrap; color: var(--muted); font-size: 9pt; }
-ul { margin: 2px 0 0; padding-left: 13px; }
+header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding: 9px 12px 8px; background: var(--cover); }
+h1 { margin: 0; white-space: nowrap; font: 800 27pt/.9 var(--cond); text-transform: uppercase; letter-spacing: -.01em; }
+.contacts { text-align: right; font: 500 9.4pt/1.35 var(--cond); }
+.summary { margin: 8px 0 0; font-size: 9.6pt; line-height: 1.42; }
+h2 { margin: 11px 0 5px; padding-bottom: 1px; font: 800 13pt/1.1 var(--cond); border-bottom: 2.5px solid var(--ink); }
+.job { margin: 0 0 6px; }
+.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.job h3 { margin: 0; font: 700 11pt/1.2 var(--cond); }
+.job h3 span { font-weight: 500; color: var(--muted); }
+.when { white-space: nowrap; font: 700 10pt/1.2 var(--cond); }
+ul { margin: 2px 0 0; padding-left: 12px; }
 li { margin: 0 0 1.5px; }
-li::marker { color: var(--accent); }
-.skills { display: grid; grid-template-columns: 34mm 1fr; gap: 3px 10px; }
-.skills dt { font-weight: 700; }
+li::marker { content: "– "; }
+li b { font-weight: 700; }
+.skills { display: grid; grid-template-columns: 30mm 1fr; gap: 3px 10px; }
+.skills dt { font: 700 10pt/1.3 var(--cond); }
 .skills dd { margin: 0; }
 </style>
 </head>
