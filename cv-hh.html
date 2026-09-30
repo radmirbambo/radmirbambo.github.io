@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Шайхутдинов Радмир — резюме</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #1a1a2e;
+    background: white;
+    font-size: 7.5pt;
+    line-height: 1.35;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  .page { width: 210mm; min-height: 297mm; padding: 7mm 15mm 6mm 15mm; position: relative; }
+
+  .header { display: flex; gap: 14px; margin-bottom: 6px; align-items: flex-start; }
+  .photo { width: 66px; height: 66px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; flex-shrink: 0; border: 2px solid #e8e8f0; }
+  .header-info { flex: 1; }
+  .name { font-size: 19pt; font-weight: 700; color: #1a1a2e; letter-spacing: -0.5px; }
+  .demographics { font-size: 7.5pt; color: #777; margin-bottom: 2px; }
+  .contacts-block { font-size: 7.5pt; color: #555; line-height: 1.45; }
+  .contact-label { color: #999; font-size: 7pt; }
+
+  .section-divider { font-size: 8pt; font-weight: 300; color: #999; border-bottom: 1px solid #ddd; padding-bottom: 1px; margin-top: 5px; margin-bottom: 3px; }
+
+  .position-title { font-size: 12.5pt; font-weight: 700; color: #1a1a2e; margin-bottom: 1px; }
+  .position-details { font-size: 7.5pt; color: #666; line-height: 1.45; }
+
+  .exp-entry, .edu-entry { display: grid; grid-template-columns: 82px 1fr; gap: 10px; margin-bottom: 4px; }
+  .exp-dates, .edu-dates { font-size: 6.8pt; color: #888; line-height: 1.4; padding-top: 1px; }
+  .exp-company { font-size: 9pt; font-weight: 700; color: #1a1a2e; }
+  .exp-company-meta { font-size: 6.8pt; color: #999; margin-bottom: 1px; }
+  .exp-role { font-size: 8.2pt; font-weight: 600; color: #1a1a2e; margin-bottom: 1px; }
+  .exp-desc { font-size: 7.3pt; color: #333; line-height: 1.35; }
+  .exp-desc p { margin-bottom: 1px; padding-left: 12px; position: relative; }
+  .exp-desc p::before { content: "—"; position: absolute; left: 0; color: #bbb; }
+
+  .edu-name { font-size: 8.5pt; font-weight: 700; color: #1a1a2e; }
+  .edu-detail { font-size: 7.5pt; color: #555; line-height: 1.4; }
+
+  .skills-grid { display: grid; grid-template-columns: 82px 1fr; gap: 3px 10px; align-items: baseline; }
+  .skill-label { font-size: 6.8pt; color: #888; text-align: right; padding-right: 4px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+  .tag { background: #f3f3f8; color: #333; font-size: 6.8pt; padding: 1px 5px; border-radius: 3px; white-space: nowrap; }
+  .lang-row { font-size: 7.5pt; color: #444; }
+  .lang-level { color: #999; font-size: 6.8pt; }
+
+  .about-block { font-size: 7.3pt; color: #333; line-height: 1.4; padding-left: 92px; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <img src="img/radmir-cv.jpg" class="photo" alt="Радмир Шайхутдинов">
+    <div class="header-info">
+      <div class="name">Шайхутдинов Радмир</div>
+      <div class="demographics">20 лет, Москва</div>
+      <div class="contacts-block">
+        +7 995 780-44-01 &nbsp;·&nbsp; shaikhutdinov.ri@phystech.edu &nbsp;·&nbsp; Radmir_Shaykhutdinov@bba.skolkovo.ru<br>
+        <span class="contact-label">Telegram:</span> @radmirshaikh &nbsp;·&nbsp;
+        <span class="contact-label">Сайт:</span> <a href="https://radmirbambo.github.io">radmirbambo.github.io</a> &nbsp;·&nbsp;
+        <span class="contact-label">GitHub:</span> <a href="https://github.com/radmirbambo">github.com/radmirbambo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">Желаемая должность</div>
+  <div class="position-title">Менеджер AI-продуктов — программа «МТС Лидер»</div>
+  <div class="position-details">
+    <strong>Специализации:</strong> управление продуктом, AI и автоматизация, бизнес-процессы &nbsp;·&nbsp;
+    <strong>Занятость:</strong> полная &nbsp;·&nbsp;
+    <strong>График:</strong> полный день, офис
+  </div>
+
+  <div class="section-divider">Образование</div>
+
+  <div class="edu-entry">
+    <div class="edu-dates">2024 — наст. время<br><span style="color:#aaa">3 курс</span></div>
+    <div>
+      <div class="edu-name">МФТИ × Школа управления «Сколково», Физтех-школа бизнеса высоких технологий</div>
+      <div class="edu-detail">
+        Бизнес-бакалавриат на двух треках<br>
+        Курсы: матанализ, теормех, дифференциальные уравнения, теория вероятностей, матстатистика, ML, анализ данных · маркетинг, поведенческая экономика, лидерство, консалтинговый проект
+      </div>
+    </div>
+  </div>
+
+  <div class="edu-entry">
+    <div class="edu-dates">2023 — 2025<br><span style="color:#aaa">2 курса</span></div>
+    <div>
+      <div class="edu-name">НИУ «Высшая школа экономики»</div>
+      <div class="edu-detail">Инженерная программа: математика, программирование, первые проекты с LLM (RAG, дообучение моделей). Перевёлся в МФТИ. Вёл мероприятия студорганизации: «Посвящение» на 350 человек со 100 организаторами, бюджет 1,7 млн ₽</div>
+    </div>
+  </div>
+
+  <div class="section-divider">Опыт</div>
+
+  <div class="exp-entry">
+    <div class="exp-dates">июл 2026 —<br>наст. время<br><span style="color:#aaa">3 мес.</span></div>
+    <div>
+      <div class="exp-company">Голосовой AI-администратор для стоматологий</div>
+      <div class="exp-company-meta">Стартап · B2B, медицина</div>
+      <div class="exp-role">Сооснователь — гипотезы, исследование рынка, продукт, продажи</div>
+      <div class="exp-desc">
+        <p>Проверил гипотезу «клиники теряют пациентов на заявках с сайта». Своим агентом «тайный покупатель» (Python, Playwright, Telegram-бот, Whisper) оставил заявки в 56 клиник Москвы и замерил скорость ответа → перезвонили 20, за 5 минут — 10</p>
+        <p>Выяснили, что пациенты в основном звонят, а не пишут → гипотеза не подтвердилась, перестроили продукт под входящие звонки. С партнёром собрали прототип AI-администратора на Voximplant: принимает звонок и записывает на приём</p>
+        <p>Продажи: персональные предложения первым клиникам, от сетей до частных практик</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-entry">
+    <div class="exp-dates">сен 2025 —<br>наст. время<br><span style="color:#aaa">1 год 1 мес.</span></div>
+    <div>
+      <div class="exp-company">Бизнес-клуб МФТИ</div>
+      <div class="exp-company-meta">Предпринимательское сообщество · 35 фаундеров-резидентов · <a href="https://t.me/MIPTbusinessclub">t.me/MIPTbusinessclub</a></div>
+      <div class="exp-role">Основатель и президент — стратегия, отбор резидентов, партнёрства, мероприятия</div>
+      <div class="exp-desc">
+        <p>Запустил клуб с нуля: 35 резидентов-фаундеров, суммарная выручка их компаний больше 1 млрд ₽/год. Партнёр клуба — основатель компании с оборотом 200 млрд ₽</p>
+        <p>Сам отбирал первый состав резидентов: 30–40 интервью по 35 минут</p>
+        <p>7 открытых мероприятий, ~1500 человек очно. Telegram-канал клуба с нуля до 2300+ подписчиков</p>
+        <p>Вёл интервью на сцене: Михаил Кучмент (Hoff), Борис Глазков (Роскосмос), Виктор Кузнецов (ВсеИнструменты.ру)</p>
+        <p>Запускаю Builders Club — трек для senior-разработчиков и AI-инженеров: среди участников члены сборных России и медалисты IMO</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-entry">
+    <div class="exp-dates">апр 2026 —<br>наст. время<br><span style="color:#aaa">6 мес.</span></div>
+    <div>
+      <div class="exp-company">AI-агенты для собственных проектов</div>
+      <div class="exp-company-meta">Личные проекты · <a href="https://github.com/radmirbambo">github.com/radmirbambo</a></div>
+      <div class="exp-role">Разработка LLM-агентов на Claude API</div>
+      <div class="exp-desc">
+        <p><strong>invite-bot</strong> — находит информацию о человеке в сети и пишет ему персональное приглашение от лица основателя. Работает в Бизнес-клубе МФТИ</p>
+        <p><strong>Тайный покупатель</strong> — оставляет заявки на сайтах клиник, по входящему звонку узнаёт клинику и замеряет время ответа. На нём проверили гипотезу стартапа (56 клиник)</p>
+        <p><strong><a href="https://github.com/radmirbambo/pitch-coach">pitch-coach</a></strong> — AI-копилот для питчей: RAG по реальным питчдекам, дообучил эмбеддинги поиска → Recall@1 на 10,7% выше базовых</p>
+        <p><strong><a href="https://github.com/radmirbambo/podkast-llm">podkast-llm</a></strong> — Telegram-бот рекомендаций подкастов: RAG по каталогу Яндекс Музыки, голосовой ввод</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-entry">
+    <div class="exp-dates">июл — авг 2025<br><span style="color:#aaa">2 мес., лето</span></div>
+    <div>
+      <div class="exp-company">Консалтинговая компания</div>
+      <div class="exp-company-meta">Летняя работа между семестрами</div>
+      <div class="exp-role">Бизнес-ассистент CEO</div>
+      <div class="exp-desc">
+        <p>Описал операционные процессы, написал регламенты, выстроил отдел найма</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">Навыки</div>
+
+  <div class="skills-grid">
+    <div class="skill-label">Языки</div>
+    <div>
+      <span class="lang-row">Русский <span class="lang-level">— родной</span></span> &nbsp;&nbsp;
+      <span class="lang-row">Английский <span class="lang-level">— B2 (Upper-Intermediate)</span></span>
+    </div>
+
+    <div class="skill-label">Продукт</div>
+    <div class="skill-tags">
+      <span class="tag">Проверка гипотез</span>
+      <span class="tag">Исследования клиентов</span>
+      <span class="tag">Тайный покупатель</span>
+      <span class="tag">B2B-продажи</span>
+      <span class="tag">Переговоры с C-level</span>
+      <span class="tag">Партнёрства</span>
+    </div>
+
+    <div class="skill-label">AI</div>
+    <div class="skill-tags">
+      <span class="tag">Claude API</span>
+      <span class="tag">LLM-агенты</span>
+      <span class="tag">Tool calling</span>
+      <span class="tag">Structured output</span>
+      <span class="tag">Prompt Engineering</span>
+      <span class="tag">RAG</span>
+      <span class="tag">Дообучение эмбеддингов</span>
+      <span class="tag">Whisper</span>
+    </div>
+
+    <div class="skill-label">Разработка</div>
+    <div class="skill-tags">
+      <span class="tag">Python</span>
+      <span class="tag">Playwright</span>
+      <span class="tag">Telegram Bot API</span>
+      <span class="tag">Voximplant</span>
+      <span class="tag">Git</span>
+      <span class="tag">Railway</span>
+      <span class="tag">CatBoost</span>
+      <span class="tag">NLP</span>
+    </div>
+
+    <div class="skill-label">Люди и процессы</div>
+    <div class="skill-tags">
+      <span class="tag">Управление командой 100+</span>
+      <span class="tag">Найм</span>
+      <span class="tag">Регламенты</span>
+      <span class="tag">Организация мероприятий</span>
+      <span class="tag">Публичные выступления</span>
+    </div>
+  </div>
+
+  <div class="section-divider">Почему продукт и почему МТС Лидер</div>
+
+  <div class="about-block">
+    За последний год я запустил Бизнес-клуб МФТИ и прошёл со стартапом путь от гипотезы до прототипа. На стоматологиях проверил гипотезу на реальных данных своим агентом, она не подтвердилась, и мы перестроили продукт под звонки. Так я и хочу работать дальше: быстро проверять идею на цифрах и менять решение, если цифры против.
+    <br><br>
+    В МТС Лидер вижу следующий шаг: AI-продукты на масштабе телеком-оператора, настоящие данные и менторы, которые запускали продукты на миллионы пользователей. Мой основной опыт — голосовой AI на телефонных звонках, это близко к бизнесу МТС. Хочу год сфокусироваться на задачах программы и отвечать за результат квеста целиком.
+  </div>
+
+</div>
+
+</body>
+</html>
