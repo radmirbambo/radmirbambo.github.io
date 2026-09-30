@@ -126,6 +126,7 @@ figure { margin: 0; }
 
 /* ---------- interior ---------- */
 .rubric { padding-top: 72px; }
+[tabindex="-1"]:focus { outline: none; }
 .rubric-head {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 22px;
   border-bottom: 5px solid var(--rule); padding-bottom: 8px; margin-bottom: 8px;
@@ -518,5 +519,18 @@ figure { margin: 0; }
     </div>
   </div>
 </footer>
+<script>
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="#"]');
+  if (!a) return;
+  var t = document.getElementById(a.getAttribute('href').slice(1));
+  if (!t) return;
+  e.preventDefault();
+  t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
+  t.focus({ preventScroll: true });
+});
+</script>
 </body>
 </html>
