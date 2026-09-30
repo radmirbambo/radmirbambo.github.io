@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Радмир Шайхутдинов — резюме</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink: #16213D; --muted: #5F6980; --line: #C6CCD8; --accent: #2F4BFF; }
+@page { size: A4; margin: 9mm 14mm; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: var(--ink); font: 400 9.4pt/1.4 "Onest", system-ui, sans-serif; }
+.page { max-width: 180mm; margin: 0 auto; }
+a { color: inherit; text-decoration: none; }
+header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding-bottom: 8px; border-bottom: 1.5px solid var(--ink); }
+h1 { margin: 0; white-space: nowrap; font-size: 23pt; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.contacts { text-align: right; font-size: 9pt; color: var(--muted); line-height: 1.5; }
+.summary { margin: 9px 0 0; font-size: 10pt; line-height: 1.45; }
+h2 { margin: 13px 0 5px; font-size: 11pt; font-weight: 700; color: var(--accent); }
+.job { margin: 0 0 7px; }
+.job-head { display: flex; justify-content: space-between; gap: 12px; }
+.job h3 { margin: 0; font-size: 10.2pt; font-weight: 700; }
+.job h3 span { font-weight: 400; color: var(--muted); }
+.when { white-space: nowrap; color: var(--muted); font-size: 9pt; }
+ul { margin: 2px 0 0; padding-left: 13px; }
+li { margin: 0 0 1.5px; }
+li::marker { color: var(--accent); }
+.skills { display: grid; grid-template-columns: 34mm 1fr; gap: 3px 10px; }
+.skills dt { font-weight: 700; }
+.skills dd { margin: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Радмир Шайхутдинов</h1>
+    </div>
+    <div class="contacts">
+      <a href="tel:+79957804401">+7 995 780-44-01</a> · <a href="https://t.me/radmirshaikh">t.me/radmirshaikh</a><br>
+      shaikhutdinov.ri@phystech.edu · Москва<br>
+      <a href="https://radmirbambo.github.io">radmirbambo.github.io</a> · <a href="https://github.com/radmirbambo">github.com/radmirbambo</a>
+    </div>
+  </header>
+
+  <p class="summary">Фаундер с техническим фундаментом. С 2026 года — CEO стартапа голосового AI для стоматологий, с 2025 года строю Бизнес-клуб МФТИ. Каждый день пишу AI-агентов на Claude API и довожу их до продакшна. Сильнее всего там, где нужно разобраться в задаче бизнеса, собрать людей и превратить задачу в работающий продукт.</p>
+
+  <h2>Опыт</h2>
+
+  <div class="job">
+    <div class="job-head"><h3>Сооснователь и CEO <span>— Voice AI для стоматологических клиник</span></h3><span class="when">2026 — н.в.</span></div>
+    <ul>
+      <li>Голосовой AI-администратор: берёт трубку, отвечает на вопросы пациента и записывает на приём. Отвечаю за продажи, маркетинг и команду, продукт делаем вместе с CTO.</li>
+      <li>Провёл исследование 56 клиник Москвы методом тайного покупателя: на заявку с сайта перезвонили 20, за 5 минут — 10. По итогам сменили гипотезу и перестроили продукт под телефонные звонки.</li>
+      <li>Собрали прототип на Voximplant, который принимает входящие и записывает на приём. Готовлю персональные предложения первым клиникам.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><h3>Основатель и президент <span>— Бизнес-клуб МФТИ</span></h3><span class="when">2025 — н.в.</span></div>
+    <ul>
+      <li>Собрал с нуля закрытое сообщество: 24 резидента-фаундера, средняя выручка ~40 млн ₽/год. Партнёр клуба — основатель компании с оборотом 200 млрд ₽/год.</li>
+      <li>7 мероприятий, ~1500 человек очно. Telegram-канал клуба вырос с нуля до 2000 подписчиков.</li>
+      <li>Интервью на сцене: Михаил Кучмент (Hoff), Борис Глазков (Роскосмос), Виктор Кузнецов (ВсеИнструменты.ру).</li>
+      <li>Запускаю Builders Club — закрытый трек для senior-разработчиков и AI-инженеров.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><h3>AI-проекты <span>— личные и для клуба, код на GitHub</span></h3><span class="when">2024 — н.в.</span></div>
+    <ul>
+      <li><b>invite-bot</b> — агент ищет информацию о человеке в сети и пишет персональное приглашение в стиле основателя. Claude API, web search, Telegram Bot API, Railway. Работает в клубе.</li>
+      <li><b>pitch-coach</b> — AI-копилот для питчей стартапов: RAG по реальным питчдекам, дообученные эмбеддинги поиска (Recall@1 +10,7% к базовым), режим скептичного инвестора.</li>
+      <li><b>Job Application Agent</b> — парсит вакансию, сверяет с профилем и генерирует отклик под тип роли. Agentic loop с детектором типа роли.</li>
+      <li><b>podkast-llm</b> — Telegram-бот рекомендаций подкастов: RAG по каталогу Яндекс Музыки, голосовой ввод.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><h3>Бизнес-ассистент CEO <span>— консалтинговая компания</span></h3><span class="when">2025 · 2 мес.</span></div>
+    <ul><li>Систематизировал операционные процессы, написал регламенты, выстроил отдел найма.</li></ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><h3>Координатор мероприятий, глава PR-отдела <span>— НИУ ВШЭ</span></h3><span class="when">2023 — 2025</span></div>
+    <ul>
+      <li>«Посвящение»: 350 участников, 100 организаторов под моим руководством, бюджет 1,7 млн ₽. «Детектив»: 250 участников, 80 организаторов.</li>
+      <li>PR студорганизации: Telegram, VK, контент-стратегия.</li>
+    </ul>
+  </div>
+
+  <h2>Образование</h2>
+  <div class="job">
+    <div class="job-head"><h3>МФТИ × Школа управления «Сколково» <span>— бизнес-бакалавриат</span></h3><span class="when">2024 — н.в.</span></div>
+    <ul>
+      <li>Технический трек: матанализ, теормех, дифуры, теорвер, матстатистика, ML, анализ данных.</li>
+      <li>Трек Сколково: маркетинг, поведенческая экономика, лидерство, философия, социология, психология. Консалтинговый проект с выездом в Нижний Новгород.</li>
+    </ul>
+  </div>
+  <div class="job">
+    <div class="job-head"><h3>НИУ ВШЭ <span>— осознанно ушёл после 2 курса, перевёлся на МФТИ</span></h3><span class="when">2023 — 2025</span></div>
+    <ul><li>Курс по LLM: RAG, fine-tuning, архитектуры трансформеров.</li></ul>
+  </div>
+
+  <h2>Навыки</h2>
+  <dl class="skills">
+    <dt>AI и разработка</dt><dd>Claude API: tool calling, structured output, agentic loops, multi-turn. Prompt engineering. RAG: эмбеддинги, чанкинг, retrieval, дообучение эмбеддингов. Python, Claude Code каждый день, Git, Railway. ML: CatBoost, NLP, RNN/LSTM, Ollama.</dd>
+    <dt>Бизнес и люди</dt><dd>Продажи и переговоры с C-level, исследования клиентов, партнёрства, сообщества. Регламенты, процессы, найм, управление командой 100+ человек.</dd>
+    <dt>Языки</dt><dd>Русский — родной, английский — B2.</dd>
+  </dl>
+</div>
+</body>
+</html>
