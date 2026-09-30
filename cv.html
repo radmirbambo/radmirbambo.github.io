@@ -31,7 +31,7 @@ h1 { margin: 0; white-space: nowrap; font: 800 29pt/.9 var(--cond); text-transfo
 /* body */
 main { padding: 1mm 13mm 0; }
 h2 { margin: 3.4mm 0 1.8mm; padding-bottom: .6mm; font: 800 14pt/1 var(--cond); border-bottom: 2.5px solid var(--ink); }
-.row { display: grid; grid-template-columns: 21mm 1fr; gap: 0 4mm; margin: 0 0 2mm; }
+.row { display: grid; grid-template-columns: 21mm 1fr; gap: 0 4mm; margin: 0 0 1.6mm; }
 .rail .yr { display: block; font: 800 12.5pt/1 var(--cond); }
 .rail .role { display: block; margin-top: .6mm; font: 500 8.6pt/1.2 var(--cond); color: var(--muted); }
 h3 { margin: 0 0 .6mm; font: 700 11pt/1.2 var(--cond); }
@@ -108,21 +108,22 @@ li b { font-weight: 700; }
     <div>
       <h3><span class="no">1.</span> Голосовой AI-администратор для стоматологий</h3>
       <ul>
-        <li>AI-администратор берёт трубку, отвечает на вопросы пациента и записывает на приём. Отвечаю за продажи, маркетинг и команду, продукт делаем вместе с CTO.</li>
-        <li>Проверил 56 клиник Москвы методом тайного покупателя: на заявку с сайта перезвонили 20, за 5 минут — 10. Понял, что пациенты в основном звонят, и перестроил продукт под телефон.</li>
-        <li>Собрали прототип на Voximplant: принимает входящие и записывает на приём. Готовлю персональные предложения первым клиникам.</li>
+        <li>AI-администратор берёт трубку, отвечает на вопросы пациента и записывает на приём. Отвечаю за продажи, маркетинг и команду, продукт делаем вместе с партнёром.</li>
+        <li>Проверил гипотезу, что клиники теряют пациентов на заявках с сайта: мой агент оставил заявки в 56 клиник Москвы, перезвонили 20, за 5 минут — 10. Пациенты в основном звонят, гипотеза не подтвердилась —&gt; перестраиваем продукт под телефон.</li>
+        <li>Прототип на Voximplant уже принимает входящие. Готовлю предложения первым клиникам.</li>
       </ul>
     </div>
   </div>
 
   <div class="row">
-    <div class="rail"><span class="yr">с 2024</span><span class="role">Код на GitHub</span></div>
+    <div class="rail"><span class="yr">с 2024</span><span class="role">Python, Claude API</span></div>
     <div>
-      <h3><span class="no">2.</span> AI-агенты на Claude API</h3>
+      <h3><span class="no">2.</span> AI-агенты, которые я написал</h3>
       <ul>
+        <li><b>Тайный покупатель</b> — сам оставлял заявки на сайтах стоматологий, по входящему звонку узнавал клинику и записывал время ответа. Python, Playwright, Telegram-бот, Whisper.</li>
         <li><b>invite-bot</b> — ищет информацию о человеке в сети и пишет персональное приглашение в стиле основателя. Работает в клубе.</li>
         <li><b>pitch-coach</b> — AI-копилот для питчей: RAG по реальным питчдекам, дообученные эмбеддинги поиска (Recall@1 +10,7% к базовым), режим скептичного инвестора.</li>
-        <li><b>Job Application Agent</b> — сверяет вакансию с профилем и пишет отклик под тип роли (agentic loop).</li>
+        
         <li><b>podkast-llm</b> — Telegram-бот рекомендаций подкастов: RAG по каталогу Яндекс Музыки, голосовой ввод.</li>
       </ul>
     </div>
